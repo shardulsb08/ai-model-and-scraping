@@ -1,0 +1,47 @@
+Hi, I'm Harsh Ninave, a web developer driven by a passion for crafting clean, modern designs and creating meaningful user experiences. I specialize in building high-quality solutions that combine simplicity, functionality, and attention to detail.
+
+---
+
+## About Me
+I'm Harsh Ninave, a passionate web developer specializing in modern, responsive web design. I aim to build clean, user-friendly websites that focus on functionality and aesthetics. With a focus on creating user-centric and high-performance web applications, I strive to make the web a more intuitive, engaging, and beautiful place.
+
+---
+
+## Experience
+I’ve been coding for over **2 years** and have worked on multiple projects that emphasize both functionality and design.
+
+### Skills:
+- **Frontend:** React, JavaScript, TypeScript, HTML, CSS, TailwindCSS
+- **Backend:** Node.js, Express, MongoDB
+- **Tools:** Git, Docker, Firebase, Vercel, Netlify
+- **Design:** Figma, Framer Motion
+
+---
+
+## Projects:
+Here are some of the projects I’ve worked on:
+
+1️⃣ **Personal Portfolio Website**  
+   - A personal portfolio showcasing my work and skills.  
+   - **Tech:** React, EmailJS, JavaScript, TailwindCSS, Framer  
+
+2️⃣ **Redesigned Portfolio Website**  
+   - A new version of my portfolio with a focus on clean design and improved user experience.  
+   - **Tech:** React, TypeScript, TailwindCSS, Framer  
+
+3️⃣ **Libry: Discover a World of Books!**  
+   - A book discovery platform where users can explore books of all genres.  
+   - **Tech:** Node.js, Express, MongoDB, React, TailwindCSS  
+
+4️⃣ **Blog Space**  
+   - A space where I reflect on thoughts and ideas, sharing unique perspectives.  
+   - **Tech:** React, TailwindCSS, Framer, ShadCN, TypeScript  
+
+5️⃣ **Jemini-AI**  
+   - A large language model chatbot inspired by ChatGPT and Gemini AI.  
+   - **Tech:** Express, React, Node.js, TailwindCSS, GeminiAPI  
+
+6️⃣ **Ride Share**  
+   - A ride-sharing platform that connects passengers with drivers.  
+   - **Tech:** React, Express, TailwindCSS, MongoDB, API, React-Leaflet  
+
