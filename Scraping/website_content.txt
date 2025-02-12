@@ -1,0 +1,393 @@
+URL: https://www.pranavayus.com
+Prana Vayus Technologies and Creative Solutions
+Search this site
+Embedded Files
+Skip to main content
+Skip to navigation
+Prana Vayus Technologies and Creative Solutions
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+Prana Vayus Technologies and Creative Solutions
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+More
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+Collaborate. Innovate. Elevate.
+-with passion!
+Introduction
+At Prana Vayus Technologies and Creative Solutions, we believe that cre
+ativity and innovation, powered by advanced technology, have the potential to transform lives and drive progress. With extensive professional experience in Linux Kernel development and Android BSP development, we leverage our expertise to create solutions that not only meet the demands of the market but also subtly address deeper, essential human needs.
+Our mission is to develop technology-driven solutions that enhance everyday experiences and streamline essential processes, enabling our clients to focus on what truly matters. By integrating sophisticated technologies, we provide tools and services that empower individuals and businesses to achieve greater efficiency, productivity and innovation.
+We understand that what people seek in their professional and personal lives often aligns with deeper, intrinsic needs- whether it's the desire for efficiency, the pursuit of excellence, or the drive to innovate. Our goal is to create an environment where these aspirations are supported by technology, fostering a culture of continuous improvement and creative exploration.
+At Prana Vayus Technologies and Creative Solutions, we are committed to collaborating with forward-thinking individuals and organizations. Our tailored services and innovative products are designed to meet the unique requirements of our clients while promoting a holistic approach to progress and well-being.
+Join us on our journey to inno
+vate and elevate-
+Contact us to collaborate, partner or hire our expertise today!
+Email to book an appointment: 
+contact@pranavayus.com
+Page updated
+ 
+Report abuse
+
+URL: https://www.pranavayus.com/services
+Prana Vayus Technologies and Creative Solutions - Services
+Search this site
+Embedded Files
+Skip to main content
+Skip to navigation
+Prana Vayus Technologies and Creative Solutions
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+Prana Vayus Technologies and Creative Solutions
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+More
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+Services
+List of Services
+Here is a brief non-exhaustive list of services that we provide:
+Technical Services:
+ 
+Linux kernel and device driver development
+Android BSP and HAL customization
+Device bringup
+C programming and debugging
+Open Source System-level software development, debugging, and licensing review
+Custom consumer electronic products
+User Services:
+Operating system customization (Mostly Linux-based)
+System software development
+Support on building, installing, and running software on Linux
+Smart home and IoT products
+We can also provide custom services based on your requirements.
+C
+urrent R&D Projects
+CloudLinux:
+The founder has a contract with CloudLinux where he works as a Kernel Developer in the ELS team. More information on the team here: 
+CloudLinux ELS Team
+ 
+Brief:
+ Customers can take their time for non-supported OS migration, while we deliver security patching for Linux kernel. Without continued security updates, a server is increasingly susceptible to newly discovered vulnerabilities and associated attacks. It is challenging for organizations to migrate to the newest versions of CentOS-like operating systems, but at the same time, they cannot live without ongoing support either. Now you can make this problem disappear. Operating systems like CentOS 8 Extended Lifecycle Support (ELS) from CloudLinux allows you to continue your business with OS beyond the end of support… even for 4 more years if you want! All of your fixes, patches, etc will continue to flow just like today, only from CloudLinux repos: simple and easy. 
+In Pipeline
+Android on RISC-V
+There is a potential client who wants to run Android on RISC-V based processor. We are using BeagleBoard Fire for development. BeagleV®-Fire is a revolutionary single-board computer (SBC) powered by Microchip’s PolarFire® MPFS025T 5x core RISC-V System on Chip (SoC) with FPGA fabric. BeagleV®-Fire opens up new horizons for developers, tinkerers, and the open-source community to explore the vast potential of RISC-V architecture and FPGA technology. Details of the board here: 
+BeagleBoard Fire
+Notable Past Work
+Qualcomm:
+Worked on Qualcomm's camera ISP chips for device driver development and Android camera HAL customization. 
+POC for Google's ChromeOS camera driver requirements for devices with Qualcomm camera hardware.
+OnePlus:
+Worked on OnePlus' charging drivers' porting and maintenance. 
+In charge of India's sensor BSP team. Bringup, development, customization, and maintenance of OnePlus' sensor firmware, Android HAL and framework. The sensors used in OnePlus' Android smartphones were: accelerometer, gyroscope, ambient light and proximity sensor, magnetometer, and SAR sensor.
+Freelancing Projects:
+Successfully did the bringup of a custom Rockchip RK3568 based board with Android 12, adding client-specific features.
+Fixed sound and power management drivers for a client’s HP laptop.
+Debugged and fixed issues in a couple of C-based projects.
+Email to book an appointment: 
+contact@pranavayus.com
+Page updated
+ 
+Report abuse
+
+URL: https://www.pranavayus.com/
+Prana Vayus Technologies and Creative Solutions
+Search this site
+Embedded Files
+Skip to main content
+Skip to navigation
+Prana Vayus Technologies and Creative Solutions
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+Prana Vayus Technologies and Creative Solutions
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+More
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+Collaborate. Innovate. Elevate.
+-with passion!
+Introduction
+At Prana Vayus Technologies and Creative Solutions, we believe that cre
+ativity and innovation, powered by advanced technology, have the potential to transform lives and drive progress. With extensive professional experience in Linux Kernel development and Android BSP development, we leverage our expertise to create solutions that not only meet the demands of the market but also subtly address deeper, essential human needs.
+Our mission is to develop technology-driven solutions that enhance everyday experiences and streamline essential processes, enabling our clients to focus on what truly matters. By integrating sophisticated technologies, we provide tools and services that empower individuals and businesses to achieve greater efficiency, productivity and innovation.
+We understand that what people seek in their professional and personal lives often aligns with deeper, intrinsic needs- whether it's the desire for efficiency, the pursuit of excellence, or the drive to innovate. Our goal is to create an environment where these aspirations are supported by technology, fostering a culture of continuous improvement and creative exploration.
+At Prana Vayus Technologies and Creative Solutions, we are committed to collaborating with forward-thinking individuals and organizations. Our tailored services and innovative products are designed to meet the unique requirements of our clients while promoting a holistic approach to progress and well-being.
+Join us on our journey to inno
+vate and elevate-
+Contact us to collaborate, partner or hire our expertise today!
+Email to book an appointment: 
+contact@pranavayus.com
+Page updated
+ 
+Report abuse
+
+URL: https://www.pranavayus.com/careersinternshipscollaboration
+Prana Vayus Technologies and Creative Solutions - Careers/Internships/Collaboration
+Search this site
+Embedded Files
+Skip to main content
+Skip to navigation
+Prana Vayus Technologies and Creative Solutions
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+Prana Vayus Technologies and Creative Solutions
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+More
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+Careers/Internships/Collaboration
+Temporary Positions and R&D Opportunities
+About Us
+At Prana Vayus Technologies and Creative Solutions, we believe that creativity and innovation, powered by advanced technology, have the potential to transform lives and drive progress. With extensive professional experience in Linux kernel development and Android BSP, we leverage our expertise to create solutions that not only meet market demands but also subtly address deeper, essential human needs.
+Available Positions
+We offer a range of exciting internship opportunities designed to provide valuable hands-on experience and mentorship in Linux kernel development and Embedded Software development. These positions are primarily unpaid; however, the decision to provide financial compensation is open for discussion and may be considered based on individual circumstances and performance.
+We are currently seeking temporary employees and interns for various short-term tasks and R&D projects. These positions are ideal for individuals looking to gain experience, contribute to meaningful projects, and collaborate with a team of skilled professionals.
+Intern: Embedded Software Engineer
+Requirements (optional):
+Proficiency in C programming, Linux kernel and device driver development, and embedded systems.
+Knowledge of scripting languages such as Bash or Python.
+Experience in automation.
+Mandatory Requirements:
+Passion for learning and a love for the work you do.
+Patience and persistence to navigate challenges.
+A self-learner who can progress independently with guidance.
+Types of Tasks and Projects:
+Embedded software development
+Android BSP development
+Linux kernel and device driver development
+Customization and development of open-source software, mainly in C
+Build system development and customization
+Documentation
+Benefits of Working with Us:
+Exposure to rich industry experience and niche technologies
+Receive mentorship and guidance from industry experts
+Freedom to explore personal growth and business opportunities
+Support in achieving a balance between work and personal life. We also offer flexibility to accommodate your academic commitments
+Opportunities to start your own venture with our guidance and support
+Networking Opportunities: Build connections within the industry
+Value Exchange: In recognition of the efforts and contributions of our interns, there is a possibility for financial compensation, which will be discussed on a case-by-case basis. This approach allows us to acknowledge exceptional contributions and provide support where needed
+Collaborative environment promoting a positive-sum game approach
+Application Instructions
+Resume and Cover Letter:
+Submit your updated resume highlighting relevant skills and experiences
+Include a cover letter explaining your interest in the position and how your skills align with our mission and projects
+Portfolio (if applicable):
+Provide links to any relevant projects, code repositories, or previous work that demonstrate your skills and contributions
+References (Optional):
+Include contact information for two professional or academic references who can attest to your qualifications and character
+Availability:
+Specify your availability, including start date and preferred working hours
+Application Criteria:
+Skills and Experience (Good to have):
+Proficiency in Linux Kernel development, C coding, or related technical areas
+Experience in software development, testing, or data analysis is a plus
+Strong problem-solving skills and ability to work independently
+Passion and Alignment:
+A genuine interest in technology and innovation
+Alignment with our mission to address fundamental life needs through technology
+Communication and Collaboration:
+Excellent written and verbal communication skills 
+Ability to collaborate effectively with a diverse team 
+How to Apply:
+ Email your application to 
+contact@pranavayus.com
+ with the subject line "Application for [Position] - [Your Name]". Applications will be reviewed on a rolling basis, and selected candidates will be contacted for an interview.
+Email to book an appointment: 
+contact@pranavayus.com
+Page updated
+ 
+Report abuse
+
+URL: https://www.pranavayus.com/about-us
+Prana Vayus Technologies and Creative Solutions - About Us
+Search this site
+Embedded Files
+Skip to main content
+Skip to navigation
+Prana Vayus Technologies and Creative Solutions
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+Prana Vayus Technologies and Creative Solutions
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+More
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+About Us
+The Prana Vayus Experience
+Our Expertise:
+At Prana Vayus, we specialize in Linux Kernel and Embedded Software Development, leveraging years of experience in the consumer electronics industry to deliver innovative solutions. Our founder's extensive background ensures we bring top-tier expertise to every project.
+Based on our current expertise, we can create customized Operating Systems, system software, integrate and provide consumer electronic products with compatible software.
+Our Services
+Technical Services:
+Linux kernel and device driver development
+Android BSP and HAL customization
+Device bringup
+C programming and debugging
+Open Source System-level software development, debugging, and licensing review
+Custom consumer electronic products
+User Services:
+Operating system customization (Mostly Linux-based)
+System software development
+Support on building, installing, and running software on Linux
+Smart home and IoT products
+Current Contracts/Product Releases/Work:
+Contract with CloudLinux:
+ We are currently engaged in a contract with CloudLinux, where our founder focuses on fixing security vulnerabilities in kernels for OS distributions that have reached End of Life support. This work underscores our commitment to maintaining secure and reliable systems. 
+Open Source Contributions:
+ We actively contribute to open source projects, including significant contributions to Chromium OS for Qualcomm during our founder's past employment. 
+Founder's Previous Experience
+Freelancing Projects:
+Successfully did the bringup of a custom Rockchip RK3568 based board with Android 12, adding client-specific features.
+Fixed sound and power management drivers for a client’s HP laptop.
+Debugged and fixed issues in a couple of C-based projects.
+Qualcomm India Pvt. Ltd.:
+Developed and debugged camera kernel drivers for Qualcomm chips.
+Led key projects for Chromium OS, implementing new features, ensuring robust performance, and fixing various security vulnerabilities (CVEs) in the camera kernel driver.
+OnePlus Software R&D Centre Private Limited:
+Led the sensor team, managing development and maintenance for sensor subsystems.
+Contributed to sensor bringup and development for various OnePlus devices and upgrade projects.
+Smartron India Pvt. Ltd.:
+Provided on-site support for software bringup with vendors.
+Developed and maintained key subsystems, including sensors, battery management, and thermal management for smartphones.
+Our Skills and Tools:
+Linux Kernel:
+ Experience with versions 5.15, 5.10, 5.4, 4.14, 4.10, 3.18, and 3.10. 
+Android Versions:
+ Proficiency with versions 13, 12, 11, 10, 9, 8, 7, and 6. 
+Build Systems:
+ Expertise in Android build systems, Makefiles, CMake, meson, Yocto, and buildroot. 
+Programming Languages:
+ Skilled in C, C++, Assembly, and Bash. 
+Email to book an appointment: 
+contact@pranavayus.com
+Page updated
+ 
+Report abuse
+
+URL: https://www.pranavayus.com/home
+Prana Vayus Technologies and Creative Solutions
+Search this site
+Embedded Files
+Skip to main content
+Skip to navigation
+Prana Vayus Technologies and Creative Solutions
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+Prana Vayus Technologies and Creative Solutions
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+More
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+Collaborate. Innovate. Elevate.
+-with passion!
+Introduction
+At Prana Vayus Technologies and Creative Solutions, we believe that cre
+ativity and innovation, powered by advanced technology, have the potential to transform lives and drive progress. With extensive professional experience in Linux Kernel development and Android BSP development, we leverage our expertise to create solutions that not only meet the demands of the market but also subtly address deeper, essential human needs.
+Our mission is to develop technology-driven solutions that enhance everyday experiences and streamline essential processes, enabling our clients to focus on what truly matters. By integrating sophisticated technologies, we provide tools and services that empower individuals and businesses to achieve greater efficiency, productivity and innovation.
+We understand that what people seek in their professional and personal lives often aligns with deeper, intrinsic needs- whether it's the desire for efficiency, the pursuit of excellence, or the drive to innovate. Our goal is to create an environment where these aspirations are supported by technology, fostering a culture of continuous improvement and creative exploration.
+At Prana Vayus Technologies and Creative Solutions, we are committed to collaborating with forward-thinking individuals and organizations. Our tailored services and innovative products are designed to meet the unique requirements of our clients while promoting a holistic approach to progress and well-being.
+Join us on our journey to inno
+vate and elevate-
+Contact us to collaborate, partner or hire our expertise today!
+Email to book an appointment: 
+contact@pranavayus.com
+Page updated
+ 
+Report abuse
+
+URL: https://www.pranavayus.com/contact
+Prana Vayus Technologies and Creative Solutions - Contact
+Search this site
+Embedded Files
+Skip to main content
+Skip to navigation
+Prana Vayus Technologies and Creative Solutions
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+Prana Vayus Technologies and Creative Solutions
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+More
+Home
+Services
+About Us
+Careers/Internships/Collaboration
+Contact
+Contact Us
+Contact
+Email: 
+contact@pranavayus.com
+Downloadable Resume and Professional Profiles:
+Resume
+LinkedIn
+Email to book an appointment: 
+contact@pranavayus.com
+Page updated
+ 
+Report abuse
+
