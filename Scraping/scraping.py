@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse, urlunparse
 
 # Configuration
-BASE_URL = "https://www.pranavayus.com"  # Replace with your website URL
+BASE_URL = "https://harshninave.netlify.app/"  # Replace with your website URL
 OUTPUT_FILE = "website_content.txt"
 VISITED_ROUTES = set()
 
