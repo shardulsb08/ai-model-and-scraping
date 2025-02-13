@@ -1,0 +1,72 @@
+Prana Vayus Technologies and Creative Solutions
+
+Home Page
+Title: Prana Vayus Technologies and Creative Solutions
+Description:
+At Prana Vayus Technologies and Creative Solutions, we believe that creativity and innovation, powered by advanced technology, have the potential to transform lives and drive progress. With extensive professional experience in Linux Kernel development and Android BSP development, we leverage our expertise to create solutions that not only meet the demands of the market but also subtly address deeper, essential human needs.
+Our mission is to develop technology-driven solutions that enhance everyday experiences and streamline essential processes, enabling our clients to focus on what truly matters. By integrating sophisticated technologies, we provide tools and services that empower individuals and businesses to achieve greater efficiency, productivity, and innovation.
+We understand that what people seek in their professional and personal lives often aligns with deeper, intrinsic needs—whether it's the desire for efficiency, the pursuit of excellence, or the drive to innovate. Our goal is to create an environment where these aspirations are supported by technology, fostering a culture of continuous improvement and creative exploration.
+At Prana Vayus Technologies and Creative Solutions, we are committed to collaborating with forward-thinking individuals and organizations. Our tailored services and innovative products are designed to meet the unique requirements of our clients while promoting a holistic approach to progress and well-being.
+
+Services Page
+Title: Services
+Description:
+Our services are designed to meet the unique needs of our clients, leveraging our expertise in Linux Kernel development and Android BSP development. Here are some of the key services we offer:
+Linux Kernel Development
+Our Linux kernel development services provide customized kernel and driver design to optimize your device and system according to your specific requirements. This includes:
+Developing drivers for various processor architectures such as x86, ARM, RISC-V, PowerPC, SPARC, and others.
+Building file systems from scratch and modifying existing ones.
+Configuring task scheduling and management systems.
+Building networking stacks.
+Engineering specific codes for low-level architecture.
+Performing device tree configuration.
+Setting up memory management systems.
+Developing framebuffer, V4L2, and USB interfaces.
+We assist customers in adapting operating system kernels to hardware platforms and developing drivers for essential peripherals such as audio, graphics, RTC, NAND, sensors, data exchange, and power.
+Board Support Package (BSP) Development
+Our embedded Linux Board Support Packages (BSP) development includes:
+Creation of BSP with boot loaders (U-Boot, custom).
+Development of drivers, protocol stacks, and system interfaces.
+Power-on self-test sequence development.
+Profiling and code optimization.
+Documentation development.
+Contribution to mainline open-source projects.
+With our Linux BSP development services, you secure a tailored foundation for your embedded operating systems, ensuring optimal performance.
+Asymmetric Multiprocessor Processing (AMP)
+We utilize asymmetric multiprocessing, where multiple operating systems run on a multi-core chip. One core runs Linux, managing data transfer, protocol support, and user interface access, while the other core executes a real-time operating system (RTOS), handling real-time processes.
+Additional Services
+Linux System Design: Cloud integration, OTA updates, OS migration, IoT and embedded security implementation, customization of Linux distributions, and GStreamer-based video and audio software solutions development.
+Middleware Development and Porting: We develop middleware that connects different apps, systems, and components, using technologies like XML, SOAP, web services, and service-oriented architecture.
+Optimization: Our team identifies vulnerabilities, reduces energy consumption, optimizes processor performance, and enhances the operation of RAM, ROM, and flash memory to improve overall system performance.
+
+
+About Us Page
+Title: About Us
+Description:
+Prana Vayus Technologies and Creative Solutions is a company dedicated to transforming lives through creativity and innovation powered by advanced technology. Our team comprises experts in Linux Kernel development and Android BSP development, with a strong commitment to delivering solutions that meet market demands and address deeper human needs.
+We believe that the intersection of innovation and creativity with emerging technologies offers more than a glimpse into the art of the possible; it propels us toward a future that is both exciting and uncertain. Our mission is to develop technology-driven solutions that enhance everyday experiences and streamline essential processes, enabling our clients to focus on what truly matters.
+Our team is driven by the desire to create an environment where aspirations for efficiency, excellence, and innovation are supported by technology, fostering a culture of continuous improvement and creative exploration. We are committed to collaborating with forward-thinking individuals and organizations to promote a holistic approach to progress and well-being.
+
+Careers Page
+Title: Careers
+Description:
+We are always looking for talented individuals who share our passion for creativity, innovation, and advanced technology. Join our team and help us transform lives through technology-driven solutions.
+Current Openings
+Linux Kernel Developer: We are seeking engineers with extensive experience in Linux Kernel development, including driver development, file system management, and low-level architecture engineering.
+Android BSP Development Engineer: We are looking for engineers with 8+ years of experience in embedded Linux/Linux application/driver/kernel development, strong C/C++ development skills, and a good understanding of the Android framework and overall Android Architecture.
+System Designer: Candidates should have experience in Linux system design, including cloud integration, OTA updates, OS migration, IoT and embedded security implementation, and customization of Linux distributions.
+If you are interested in any of these positions, please send your resume to careers@pranavayus.com.
+
+
+Collaboration Page
+Title: Collaboration
+Description:
+We believe that collaboration is key to driving innovation and progress. Prana Vayus Technologies and Creative Solutions is committed to partnering with forward-thinking individuals, organizations, and academic institutions to develop groundbreaking solutions that address real-world challenges.
+Our collaboration opportunities include:
+Research and Development: Partner with us to explore new technologies and develop innovative solutions.
+Joint Projects: Collaborate on specific projects to leverage our expertise in Linux Kernel development and Android BSP development.
+Academic Partnerships: Work with us to develop educational programs and training materials that prepare the next generation of technology experts.
+
+Conclusion
+Prana Vayus Technologies and Creative Solutions is dedicated to transforming lives through creativity and innovation powered by advanced technology. Our expertise in Linux Kernel development and Android BSP development allows us to create solutions that meet market demands and address deeper human needs. We are committed to collaborating with forward-thinking individuals and organizations to promote a holistic approach to progress and well-being.
+Join us on this journey to create a better future through technology-driven solutions. Whether you are a client, a potential employee, or a collaborator, we look forward to working with you
