@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
+// import { set } from 'mongoose';
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const [conversationId, setConversationId] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Toggle chat window
   const toggleChat = () => {
@@ -19,6 +21,8 @@ const Chatbot = () => {
       const userMessage = { content: message, role: 'user' };
       setMessages((prevMessages) => [...prevMessages, userMessage]);
       setMessage('');
+
+      setIsLoading(true);
 
       try {
         // Send message to backend
@@ -52,6 +56,8 @@ const Chatbot = () => {
           role: 'assistant',
         };
         setMessages((prevMessages) => [...prevMessages, errorMessage]);
+      } finally {
+        setIsLoading(false);
       }
     }
   };
@@ -111,6 +117,16 @@ const Chatbot = () => {
                 )}
               </div>
             ))}
+            {isLoading && (
+              <div className="flex items-start space-x-2 mb-4">
+                <div className="bg-blue-600 rounded-full p-2 flex-shrink-0">
+                  <MessageCircle className="w-4 h-4 text-white" />
+                </div>
+                <div className="bg-white rounded-lg rounded-tl-none p-3 shadow-sm max-w-[80%]">
+                  <p className="text-gray-700">Assistant is typing...</p>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Input Area */}
@@ -132,8 +148,8 @@ const Chatbot = () => {
             </div>
           </div>
         </div>
-        </div>
       </div>
+    </div>
   );
 };
 
