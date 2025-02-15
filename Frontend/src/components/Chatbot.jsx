@@ -1,18 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState([]);
+  const [conversationId, setConversationId] = useState(null);
 
+  // Toggle chat window
   const toggleChat = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleSend = () => {
+  // Send message to backend and handle response
+  const handleSend = async () => {
     if (message.trim()) {
-      // Handle message sending logic here
+      // Add user message to chat history
+      const userMessage = { content: message, role: 'user' };
+      setMessages((prevMessages) => [...prevMessages, userMessage]);
       setMessage('');
+
+      try {
+        // Send message to backend
+        const response = await fetch('http://localhost:5000/api/chat', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ message, conversationId }),
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to send message');
+        }
+
+        const data = await response.json();
+
+        // Add AI response to chat history
+        const aiMessage = { content: data.message, role: 'assistant' };
+        setMessages((prevMessages) => [...prevMessages, aiMessage]);
+
+        // Update conversation ID if it's a new conversation
+        if (!conversationId) {
+          setConversationId(data.conversationId);
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        // Show error message in chat
+        const errorMessage = {
+          content: 'Failed to send message. Please try again.',
+          role: 'assistant',
+        };
+        setMessages((prevMessages) => [...prevMessages, errorMessage]);
+      }
     }
   };
 
@@ -42,17 +82,32 @@ const Chatbot = () => {
 
             {/* Chat Messages */}
             <div className="h-96 overflow-y-auto p-4 bg-gray-50">
-              {/* Bot message */}
-              <div className="flex items-start space-x-2 mb-4">
-                <div className="bg-blue-600 rounded-full p-2 flex-shrink-0">
-                  <MessageCircle className="w-4 h-4 text-white" />
+              {messages.map((msg, index) => (
+                <div
+                  key={index}
+                  className={`flex items-start space-x-2 mb-4 ${
+                    msg.role === 'user' ? 'justify-end' : ''
+                  }`}>
+                  {msg.role === 'assistant' && (
+                    <div className="bg-blue-600 rounded-full p-2 flex-shrink-0">
+                      <MessageCircle className="w-4 h-4 text-white" />
+                    </div>
+                  )}
+                  <div
+                    className={`rounded-lg p-3 shadow-sm max-w-[80%] ${
+                      msg.role === 'user'
+                        ? 'bg-blue-600 text-white rounded-br-none'
+                        : 'bg-white text-gray-700 rounded-tl-none'
+                    }`}>
+                    <p>{msg.content}</p>
+                  </div>
+                  {msg.role === 'user' && (
+                    <div className="bg-gray-600 rounded-full p-2 flex-shrink-0">
+                      <MessageCircle className="w-4 h-4 text-white" />
+                    </div>
+                  )}
                 </div>
-                <div className="bg-white rounded-lg rounded-tl-none p-3 shadow-sm max-w-[80%]">
-                  <p className="text-gray-700">Hi there! 👋 How can I help you today?</p>
-                </div>
-              </div>
-
-              {/* Add more messages here */}
+              ))}
             </div>
 
             {/* Input Area */}
