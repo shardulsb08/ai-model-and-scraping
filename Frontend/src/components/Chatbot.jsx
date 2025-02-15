@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 
 const Chatbot = () => {
@@ -65,73 +65,75 @@ const Chatbot = () => {
           {isOpen ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
         </button>
 
-        {isOpen && (
-          <div className="absolute bottom-16 right-0 w-96 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
-            {/* Header */}
-            <div className="bg-blue-600 p-4 text-white">
-              <div className="flex items-center space-x-3">
-                <div className="bg-white rounded-full p-2">
-                  <MessageCircle className="w-6 h-6 text-blue-600" />
-                </div>
-                <div>
-                  <h2 className="font-bold text-lg">Chat Assistant</h2>
-                  <p className="text-sm text-blue-100">Online | Usually responds instantly</p>
-                </div>
+        {/* Chat Window */}
+        <div
+          className={`absolute bottom-16 right-0 w-96 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 transition-all duration-300 ease-in-out transform ${
+            isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+          }`}>
+          {/* Header */}
+          <div className="bg-blue-600 p-4 text-white">
+            <div className="flex items-center space-x-3">
+              <div className="bg-white rounded-full p-2">
+                <MessageCircle className="w-6 h-6 text-blue-600" />
               </div>
-            </div>
-
-            {/* Chat Messages */}
-            <div className="h-96 overflow-y-auto p-4 bg-gray-50">
-              {messages.map((msg, index) => (
-                <div
-                  key={index}
-                  className={`flex items-start space-x-2 mb-4 ${
-                    msg.role === 'user' ? 'justify-end' : ''
-                  }`}>
-                  {msg.role === 'assistant' && (
-                    <div className="bg-blue-600 rounded-full p-2 flex-shrink-0">
-                      <MessageCircle className="w-4 h-4 text-white" />
-                    </div>
-                  )}
-                  <div
-                    className={`rounded-lg p-3 shadow-sm max-w-[80%] ${
-                      msg.role === 'user'
-                        ? 'bg-blue-600 text-white rounded-br-none'
-                        : 'bg-white text-gray-700 rounded-tl-none'
-                    }`}>
-                    <p>{msg.content}</p>
-                  </div>
-                  {msg.role === 'user' && (
-                    <div className="bg-gray-600 rounded-full p-2 flex-shrink-0">
-                      <MessageCircle className="w-4 h-4 text-white" />
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            {/* Input Area */}
-            <div className="p-4 border-t border-gray-200 bg-white">
-              <div className="flex space-x-2">
-                <input
-                  type="text"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Type your message..."
-                  className="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-                  onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                />
-                <button
-                  onClick={handleSend}
-                  className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-lg transition-colors duration-200">
-                  <Send className="w-5 h-5" />
-                </button>
+              <div>
+                <h2 className="font-bold text-lg">Chat Assistant</h2>
+                <p className="text-sm text-blue-100">Online | Usually responds instantly</p>
               </div>
             </div>
           </div>
-        )}
+
+          {/* Chat Messages */}
+          <div className="h-96 overflow-y-auto p-4 bg-gray-50">
+            {messages.map((msg, index) => (
+              <div
+                key={index}
+                className={`flex items-start space-x-2 mb-4 ${
+                  msg.role === 'user' ? 'justify-end' : ''
+                }`}>
+                {msg.role === 'assistant' && (
+                  <div className="bg-blue-600 rounded-full p-2 flex-shrink-0">
+                    <MessageCircle className="w-4 h-4 text-white" />
+                  </div>
+                )}
+                <div
+                  className={`rounded-lg p-3 shadow-sm max-w-[80%] ${
+                    msg.role === 'user'
+                      ? 'bg-blue-600 text-white rounded-br-none'
+                      : 'bg-white text-gray-700 rounded-tl-none'
+                  }`}>
+                  <p>{msg.content}</p>
+                </div>
+                {msg.role === 'user' && (
+                  <div className="bg-gray-600 rounded-full p-2 flex-shrink-0">
+                    <MessageCircle className="w-4 h-4 text-white" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Input Area */}
+          <div className="p-4 border-t border-gray-200 bg-white">
+            <div className="flex space-x-2">
+              <input
+                type="text"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Type your message..."
+                className="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+              />
+              <button
+                onClick={handleSend}
+                className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-lg transition-colors duration-200">
+                <Send className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+        </div>
       </div>
-    </div>
   );
 };
 
