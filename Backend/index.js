@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const chatRoutes = require('./routes/chatRoutes');
+const scrapeRoutes = require('./routes/scrapeRoutes');
 
 const app = express();
 
@@ -19,7 +20,8 @@ mongoose
   
 
 // Routes
-app.use("/api", chatRoutes)
+app.use("/api", chatRoutes);
+app.use("/api", scrapeRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
