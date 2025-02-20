@@ -8,18 +8,18 @@ import sys
 
 # Get the URL from the command-line argument
 if len(sys.argv) < 2:
-    print("Usage: python scraper.py <url>")
+    print("Usage: python scraper.py <url>", file=sys.stderr)
     sys.exit(1)
 
 base_url = sys.argv[1]
-print(f"Scraping website: {base_url}")  # Debugging
+print(f"Scraping website: {base_url}", file=sys.stderr)  # Debugging to stderr
 
 # Set up Selenium with Chrome (automatically downloads ChromeDriver)
 try:
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-    print("ChromeDriver initialized successfully")  # Debugging
+    print("ChromeDriver initialized successfully", file=sys.stderr)  # Debugging to stderr
 except Exception as e:
-    print(f"Error initializing ChromeDriver: {e}")
+    print(f"Error initializing ChromeDriver: {e}", file=sys.stderr)
     sys.exit(1)
 
 # Set to keep track of visited URLs
@@ -29,34 +29,25 @@ visited_urls = set()
 def scrape_page(url):
     # Skip if the URL has already been visited
     if url in visited_urls:
-        return
+        return ""
     visited_urls.add(url)  # Mark the URL as visited
 
     # Open the page
-    print(f"Opening URL: {url}")  # Debugging
+    print(f"Opening URL: {url}", file=sys.stderr)  # Debugging to stderr
     try:
         driver.get(url)
         time.sleep(2)  # Wait for the page to load
     except Exception as e:
-        print(f"Error opening URL {url}: {e}")
-        return
+        print(f"Error opening URL {url}: {e}", file=sys.stderr)
+        return ""
 
     # Extract all text content from the page
     try:
         page_content = driver.find_element(By.TAG_NAME, "body").text
-        print(f"Scraped content from {url}")  # Debugging
+        print(f"Scraped content from {url}", file=sys.stderr)  # Debugging to stderr
     except Exception as e:
-        print(f"Error scraping content from {url}: {e}")
-        return
-
-    # Append the content to the output file
-    try:
-        with open("all_scraped_data2.txt", "a", encoding="utf-8") as file:
-            file.write(f"URL: {url}\n")  # Write the URL as a header
-            file.write(page_content + "\n\n")  # Write the page content
-        print(f"Saved content from {url} to file")  # Debugging
-    except Exception as e:
-        print(f"Error saving content to file: {e}")
+        print(f"Error scraping content from {url}: {e}", file=sys.stderr)
+        return ""
 
     # Extract all links on the page
     try:
@@ -65,20 +56,22 @@ def scrape_page(url):
             href = link.get_attribute("href")
             if href and href.startswith(base_url):  # Ensure the link belongs to the same website
                 full_url = urljoin(base_url, href)  # Resolve relative URLs
-                scrape_page(full_url)  # Recursively scrape the new link
+                page_content += "\n" + scrape_page(full_url)  # Recursively scrape the new link
     except Exception as e:
-        print(f"Error extracting links from {url}: {e}")
+        print(f"Error extracting links from {url}: {e}", file=sys.stderr)
+
+    return page_content
 
 # Start scraping from the base URL
-scrape_page(base_url)
+try:
+    scraped_content = scrape_page(base_url)
+    print("Scraping completed successfully", file=sys.stderr)  # Debugging to stderr
+except Exception as e:
+    print(f"Error during scraping: {e}", file=sys.stderr)
+    scraped_content = ""
 
 # Close the browser
 driver.quit()
-print("Scraping completed successfully")  # Debugging
 
-# Print the scraped content to stdout (for the backend to capture)
-try:
-    with open("all_scraped_data2.txt", "r", encoding="utf-8") as file:
-        print(file.read())
-except Exception as e:
-    print(f"Error reading scraped content: {e}")
+# Print ONLY the scraped content to stdout (for the backend to capture)
+print(scraped_content)
