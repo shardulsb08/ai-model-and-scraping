@@ -3,10 +3,10 @@ const { generateAIResponse } = require('../utils/pythonRunner');
 
 const processMessage = async (req, res) => {
   try {
-    const { message, conversationId } = req.body;
+    const { message, conversationId, domain } = req.body;
 
     // Generate AI response
-    const aiResponse = await generateAIResponse(message);
+    const aiResponse = await generateAIResponse(message, domain);
 
     // Store in MongoDB
     let conversation;

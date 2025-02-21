@@ -1,9 +1,10 @@
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+import pymongo
 
 # Load the model and tokenizer
-model_name = "HuggingFaceTB/SmolLM-1.7B"
+model_name = "google/flan-t5-small"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(model_name)
+model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
 # Set the pad token if not already set
 if tokenizer.pad_token is None:
@@ -13,12 +14,24 @@ if tokenizer.pad_token is None:
 device = "cpu"
 model.to(device)
 
-# Load the formatted website content
-with open("formatted_website_content.txt", "r", encoding="utf-8") as file:
-    website_content = file.read()
+# Connect to MongoDB
+client = pymongo.MongoClient("mongodb+srv://harsh:harsh9359@cluster0.axgoi9y.mongodb.net/")
+db = client["portfolio-chat"]
+website_content_collection = db["websitecontents"]
 
-def generate_response(prompt):
+def fetch_website_content(domain):
+    """Fetch the scraped content from MongoDB based on the domain."""
+    content_doc = website_content_collection.find_one({ "domain": domain })
+    return content_doc["content"] if content_doc else ""
+
+def generate_response(prompt, domain):
     """Generate a concise and accurate response to the user's question."""
+    # Fetch the website content from MongoDB
+    website_content = fetch_website_content(domain)
+
+    if not website_content:
+        return "Sorry, I couldn't find any content for this website."
+
     full_prompt = (
         f"Pretend you are my assistant, helping users navigate my portfolio.\n"
         f"Use only the given website content {website_content}\n"
@@ -30,7 +43,7 @@ def generate_response(prompt):
 
     # Tokenize input
     inputs = tokenizer(full_prompt, return_tensors="pt", padding=True, truncation=True)
-    inputs = {key: value.to(device) for key, value in inputs.items()}
+    inputs = { key: value.to(device) for key, value in inputs.items() }
 
     # Generate response with constraints
     outputs = model.generate(
@@ -61,7 +74,12 @@ def generate_response(prompt):
 
 if __name__ == "__main__":
     import sys
+    if len(sys.argv) < 3:
+        print("Usage: python chatbot.py <prompt> <domain>")
+        sys.exit(1)
+
     prompt = sys.argv[1]
-    answer = generate_response(prompt)
+    domain = sys.argv[2]
+    answer = generate_response(prompt, domain)
     print(f"Question: {prompt}")
     print(f"Answer: {answer}")

@@ -1,8 +1,8 @@
 const { spawn } = require('child_process');
 
-const generateAIResponse = async (prompt) => {
+const generateAIResponse = async (prompt, domain) => {
   return new Promise((resolve, reject) => {
-    const pythonProcess = spawn('python', ['chatbot.py', prompt]);
+    const pythonProcess = spawn('python', ['chatbot.py', prompt, domain]);
     let result = '';
     let error = '';
 
