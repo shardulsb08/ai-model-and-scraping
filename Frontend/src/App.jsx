@@ -9,7 +9,8 @@ const App = () => {
   const [error, setError] = useState('');
   const [currentDomain, setCurrentDomain] = useState('');
 
-  const handleScrape = async () => {
+  const handleScrape = async (e) => {
+    e.preventDefault();
     if (!url) {
       setError('Please enter a valid URL');
       return;
@@ -69,7 +70,7 @@ const App = () => {
                 onChange={(e) => setUrl(e.target.value)}
                 placeholder="https://example.com"
                 className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                onKeyPress={(e) => e.key === 'Enter' && handleScrape()}
+                onKeyDown={(e) => e.key === 'Enter' && handleScrape(e)}
               />
               <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
             </div>

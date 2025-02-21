@@ -14,7 +14,8 @@ const Chatbot = ({domain, isScraped}) => {
   };
 
   // Send message to backend and handle response
-  const handleSend = async () => {
+  const handleSend = async (e) => {
+    e.preventDefault();
     if (message.trim() && domain) {
       // Add user message to chat history
       const userMessage = { content: message, role: 'user' };
@@ -148,7 +149,7 @@ const Chatbot = ({domain, isScraped}) => {
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Type your message..."
                   className="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-                  onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+                  onKeyDown={(e) => e.key === 'Enter' && handleSend(e)}
                   disabled={!isScraped || isLoading} // Disable input while loading
                 />
                 <button
