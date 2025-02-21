@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 
-const Chatbot = () => {
+const Chatbot = ({domain, isScraped}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const [conversationId, setConversationId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [currentDomain, setCurrentDomain] = useState(''); // Store the domain of the scraped website
 
   // Toggle chat window
   const toggleChat = () => {
@@ -16,7 +15,7 @@ const Chatbot = () => {
 
   // Send message to backend and handle response
   const handleSend = async () => {
-    if (message.trim()) {
+    if (message.trim() && domain) {
       // Add user message to chat history
       const userMessage = { content: message, role: 'user' };
       setMessages((prevMessages) => [...prevMessages, userMessage]);
@@ -34,7 +33,7 @@ const Chatbot = () => {
           body: JSON.stringify({
             message,
             conversationId,
-            domain: currentDomain, // Pass the domain to the backend
+            domain,
           }),
         });
 
@@ -66,36 +65,6 @@ const Chatbot = () => {
     }
   };
 
-  // Handle URL submission and scraping
-  const handleScrape = async (url) => {
-    if (!url) {
-      alert('Please enter a valid URL');
-      return;
-    }
-
-    try {
-      const response = await fetch('http://localhost:5000/api/scrape', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ url }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to scrape website');
-      }
-
-      const data = await response.json();
-      const domain = new URL(url).hostname; // Extract domain from URL
-      setCurrentDomain(domain); // Set the current domain for the chatbot
-      alert('Website scraped successfully! You can now chat with the bot.');
-    } catch (error) {
-      console.error('Error:', error);
-      alert('Failed to scrape website. Please try again.');
-    }
-  };
-
   return (
     <div className="fixed bottom-0 right-0 mb-6 mr-6">
       <div className="relative">
@@ -116,13 +85,20 @@ const Chatbot = () => {
                 </div>
                 <div>
                   <h2 className="font-bold text-lg">Chat Assistant</h2>
-                  <p className="text-sm text-blue-100">Online | Usually responds instantly</p>
+                  <p>
+                    {isScraped ? `Ready to chat about ${domain}` : 'Please scrape a website first'}
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Chat Messages */}
             <div className="h-96 overflow-y-auto p-4 bg-gray-50">
+              {!isScraped && (
+                <div className="text-center text-gray-500 mt-4">
+                  Please scrape a website using the form above to start chatting
+                </div>
+              )}
               {messages.map((msg, index) => (
                 <div
                   key={index}
@@ -165,51 +141,24 @@ const Chatbot = () => {
 
             {/* Input Area */}
             <div className="p-4 border-t border-gray-200 bg-white">
-              {/* URL Input Form (only shown if no domain is set) */}
-              {!currentDomain && (
-                <div className="mb-4">
-                  <input
-                    type="text"
-                    placeholder="Enter website URL to scrape..."
-                    className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-                    onKeyPress={(e) => {
-                      if (e.key === 'Enter') {
-                        handleScrape(e.target.value);
-                      }
-                    }}
-                  />
-                  <button
-                    onClick={() => {
-                      const url = document.querySelector('input[type="text"]').value;
-                      handleScrape(url);
-                    }}
-                    className="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-lg transition-colors duration-200">
-                    Scrape Website
-                  </button>
-                </div>
-              )}
-
-              {/* Chat Input (only shown if domain is set) */}
-              {currentDomain && (
-                <div className="flex space-x-2">
-                  <input
-                    type="text"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Type your message..."
-                    className="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-                    onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                    disabled={isLoading} // Disable input while loading
-                  />
-                  <button
-                    onClick={handleSend}
-                    className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-lg transition-colors duration-200"
-                    disabled={isLoading} // Disable button while loading
-                  >
-                    <Send className="w-5 h-5" />
-                  </button>
-                </div>
-              )}
+              <div className="flex space-x-2">
+                <input
+                  type="text"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder="Type your message..."
+                  className="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                  onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+                  disabled={!isScraped || isLoading} // Disable input while loading
+                />
+                <button
+                  onClick={handleSend}
+                  className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-lg transition-colors duration-200"
+                  disabled={!isScraped || isLoading} // Disable button while loading
+                >
+                  <Send className="w-5 h-5" />
+                </button>
+              </div>
             </div>
           </div>
         )}
