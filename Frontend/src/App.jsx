@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Chatbot from './components/Chatbot';
 import { Globe, Search, CheckCircle, XCircle } from 'lucide-react';
+// import { set } from 'mongoose';
 
 const App = () => {
   const [url, setUrl] = useState('');
@@ -8,6 +9,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [currentDomain, setCurrentDomain] = useState('');
+  const [scrapeMessage, setScrapeMessage] = useState('');
 
   const handleScrape = async (e) => {
     e.preventDefault();
@@ -18,6 +20,7 @@ const App = () => {
 
     setIsLoading(true);
     setError('');
+    setScrapeMessage('');
 
     try {
       const response = await fetch('http://localhost:5000/api/scrape', {
@@ -32,10 +35,13 @@ const App = () => {
         throw new Error('Failed to scrape website');
       }
 
-      await response.json();
+      const data = await response.json();
       const domain = new URL(url).hostname;
       setCurrentDomain(domain);
       setIsScraped(true);
+
+      // Display the message from the backend
+      setScrapeMessage(data.message);
     } catch (error) {
       console.error('Error:', error);
       setError('Failed to scrape website. Please try again.');
@@ -94,10 +100,10 @@ const App = () => {
                 <p>{error}</p>
               </div>
             )}
-            {isScraped && !error && (
-              <div className="mt-4 flex items-center space-x-2 text-green-600">
+            {scrapeMessage && (
+              <div className="mt-4 p-4 bg-green-50 rounded-lg flex items-center space-x-2 text-green-600">
                 <CheckCircle className="w-5 h-5" />
-                <p>Website scraped successfully! You can now chat with the assistant.</p>
+                <p>{scrapeMessage}</p>
               </div>
             )}
           </div>

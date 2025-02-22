@@ -9,11 +9,20 @@ const scrapeWebsite = async (req, res) => {
   }
 
   try {
+
+    const domain = new URL(url).hostname;
+
+    // Check if the domain already exists in mongodb
+    const existingContent = await WebsiteContent.findOne({ domain });
+
+    if (existingContent) {
+      return res
+        .status(200)
+        .json({ message: 'Domain content already exists.', content: existingContent.content });
+    }
+
     // Run the Python scraper script
     const scrapedContent = await runScraper(url);
-
-    // Extract domain from URL (e.g., "https://example.com" -> "example.com")
-    const domain = new URL(url).hostname;
 
     // Save the scraped content to MongoDB
     const websiteContent = new WebsiteContent({
@@ -23,7 +32,10 @@ const scrapeWebsite = async (req, res) => {
     await websiteContent.save();
 
     // Return the scraped content to the frontend
-    res.json({ content: scrapedContent });
+    res.json({
+      message: 'Website scraped successfully! You can now chat with the assistant.',
+      content: scrapedContent,
+    });
   } catch (error) {
     console.error('Error scraping website:', error);
     res.status(500).json({ error: 'Failed to scrape website' });
