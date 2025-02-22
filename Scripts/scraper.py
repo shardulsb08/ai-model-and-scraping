@@ -6,6 +6,10 @@ from urllib.parse import urljoin
 import time
 import sys
 
+import requests
+import fitz  # pymupdf
+import os
+
 # Get the URL from the command-line argument
 if len(sys.argv) < 2:
     print("Usage: python scraper.py <url>", file=sys.stderr)
@@ -24,6 +28,29 @@ except Exception as e:
 
 # Set to keep track of visited URLs
 visited_urls = set()
+
+# Function to extract text from a PDF
+def extract_text_from_pdf(pdf_url):
+    try:
+        # Download the PDF
+        response = requests.get(pdf_url)
+        pdf_path = "temp.pdf"
+        with open(pdf_path, "wb") as pdf_file:
+            pdf_file.write(response.content)
+
+        # Extract text from the PDF
+        text = ""
+        with fitz.open(pdf_path) as pdf_document:
+            for page_num in range(len(pdf_document)):
+                page = pdf_document.load_page(page_num)
+                text += page.get_text()
+
+        # Delete the temporary PDF file
+        os.remove(pdf_path)
+        return text
+    except Exception as e:
+        print(f"Error extracting text from PDF {pdf_url}: {e}", file=sys.stderr)
+        return ""
 
 # Function to scrape a page and extract all links
 def scrape_page(url):
@@ -54,9 +81,17 @@ def scrape_page(url):
         links = driver.find_elements(By.TAG_NAME, "a")
         for link in links:
             href = link.get_attribute("href")
-            if href and href.startswith(base_url):  # Ensure the link belongs to the same website
-                full_url = urljoin(base_url, href)  # Resolve relative URLs
-                page_content += "\n" + scrape_page(full_url)  # Recursively scrape the new link
+            if href:
+                # Handle PDF links
+                if href.endswith(".pdf"):
+                    print(f"Found PDF: {href}", file=sys.stderr)
+                    pdf_text = extract_text_from_pdf(href)
+                    page_content += f"\n\nPDF Content from {href}:\n{pdf_text}"
+                # Handle regular links
+                elif href.startswith(base_url):  # Ensure the link belongs to the same website
+                    full_url = urljoin(base_url, href)  # Resolve relative URLs
+                    if full_url not in visited_urls:
+                        page_content += "\n" + scrape_page(full_url)  # Recursively scrape the new link
     except Exception as e:
         print(f"Error extracting links from {url}: {e}", file=sys.stderr)
 
@@ -74,4 +109,4 @@ except Exception as e:
 driver.quit()
 
 # Print ONLY the scraped content to stdout (for the backend to capture)
-print(scraped_content)
+sys.stdout.buffer.write(scraped_content.encode('utf-8'))
