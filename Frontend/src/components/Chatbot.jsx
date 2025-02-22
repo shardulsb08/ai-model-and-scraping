@@ -134,7 +134,9 @@ const Chatbot = ({domain, isScraped}) => {
                     <MessageCircle className="w-4 h-4 text-white" />
                   </div>
                   <div className="bg-white rounded-lg rounded-tl-none p-3 shadow-sm max-w-[80%]">
-                    <p className="text-gray-700">Assistant is typing...</p>
+                    <p className="text-gray-700">
+                      Assistant is typing<span className="animate-blink">...</span>
+                    </p>
                   </div>
                 </div>
               )}

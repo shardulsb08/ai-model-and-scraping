@@ -51,7 +51,7 @@ const App = () => {
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-center space-x-2">
             <Globe className="w-8 h-8 text-blue-600" />
-            <h1 className="text-3xl font-bold text-gray-800">Website Scraper Assistant</h1>
+            <h1 className="text-3xl font-bold text-gray-800">Website Assistant</h1>
           </div>
         </div>
       </header>
