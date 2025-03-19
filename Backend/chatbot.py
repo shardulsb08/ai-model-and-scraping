@@ -1,10 +1,10 @@
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer
 import pymongo
 
 # Load the model and tokenizer
-model_name = "google/flan-t5-small"
+model_name = "Qwen/Qwen2.5-7B"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(model_name)
 
 # Set the pad token if not already set
 if tokenizer.pad_token is None:
@@ -32,6 +32,7 @@ def generate_response(prompt, domain):
     if not website_content:
         return "Sorry, I couldn't find any content for this website."
 
+#TODO: Improve the prompt for better response.
     full_prompt = (
         f"Pretend you are my assistant, helping users navigate my portfolio.\n"
         f"Use only the given website content {website_content}\n"
@@ -46,11 +47,12 @@ def generate_response(prompt, domain):
     inputs = { key: value.to(device) for key, value in inputs.items() }
 
     # Generate response with constraints
+#TODO: Check if top_k and top_p need to be updated based on the model used.
     outputs = model.generate(
         inputs["input_ids"],
         attention_mask=inputs["attention_mask"],
         pad_token_id=tokenizer.pad_token_id,
-        max_new_tokens=100,  # Limit response to 100 tokens
+        max_new_tokens=500,  # Limit response to 100 tokens
         num_return_sequences=1,
         temperature=0.7,
         top_k=50,
